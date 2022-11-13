@@ -10,14 +10,14 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: mscourse
-          uri: lb://ms-course
+        - id: mscatalog
+          uri: lb://api-catalog
           predicates:
-            - Path=/course/**
-        - id: mssubscription
-          uri: lb://ms-subscription
+            - Path=/api/v1/catalog/**
+        - id: msmovie
+          uri: lb://api-movie
           predicates:
-            - Path=/subscription/**
+            - Path=/api/v1/movies/**
 
 info:
   app:
