@@ -1,13 +1,14 @@
 server:
-  port: 8888
+  port: ${PORT:8888}
+
 spring:
   application:
-    name: configServer
+    name: config-server
   cloud:
     config:
       server:
         git:
           uri: https://github.com/VickyStancic/ParcialStancicVictoria
-          search-paths: ParcialStancicVictoria/ConfigServer/
-          force-pull: true
           default-label: develop
+          force-pull: true
+          search-paths: configData
