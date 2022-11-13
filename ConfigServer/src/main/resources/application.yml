@@ -8,6 +8,6 @@ spring:
       server:
         git:
           uri: https://github.com/VickyStancic/ParcialStancicVictoria
-          search-paths: ParcialStancicVictoria/ConfigData/
+          search-paths: ParcialStancicVictoria/ConfigServer/
           force-pull: true
           default-label: develop
