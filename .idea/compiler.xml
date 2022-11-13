@@ -10,6 +10,7 @@
         <module name="api-catalog" />
         <module name="api-movie" />
         <module name="ConfigServer" />
+        <module name="eurekaServer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
