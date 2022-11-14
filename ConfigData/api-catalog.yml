@@ -1,6 +1,8 @@
+server:
+  port: ${PORT:8081}
 spring:
   application:
-    name: api-movie
+    name: api-catalog
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/api-catalog
