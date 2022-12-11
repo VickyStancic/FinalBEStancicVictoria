@@ -8,8 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api-catalog" />
-        <module name="api-movie" />
         <module name="ConfigServer" />
+        <module name="api-movie" />
         <module name="eurekaServer" />
         <module name="gateway" />
       </profile>
