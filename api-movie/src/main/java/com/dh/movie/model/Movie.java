@@ -27,5 +27,4 @@ public class Movie implements Serializable {
     private String genre;
 
     private String urlStream;
-
 }

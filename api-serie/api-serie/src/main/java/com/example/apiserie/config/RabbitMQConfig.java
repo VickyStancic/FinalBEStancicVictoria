@@ -11,20 +11,18 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
 
     public static final String EXCHANGE_NAME = "movieExchange";
-    public static final String TOPIC_NEW_SERIES = "com.example.newSeries";
+    public static final String TOPIC_NEW_SERIES = "com.dh.movie.newSerie";
 
     @Bean
     public TopicExchange appExchange() {
         return new TopicExchange(EXCHANGE_NAME);
     }
-
     @Bean
     public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
         final var rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setMessageConverter(producerJackson2MessageConverter());
         return rabbitTemplate;
     }
-
     @Bean
     public Jackson2JsonMessageConverter producerJackson2MessageConverter() {
         return new Jackson2JsonMessageConverter();

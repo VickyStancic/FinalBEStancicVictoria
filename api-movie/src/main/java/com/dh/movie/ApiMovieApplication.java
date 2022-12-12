@@ -17,7 +17,6 @@ public class ApiMovieApplication {
         SpringApplication.run(ApiMovieApplication.class, args);
     }
 
-
     @Bean
     public CommandLineRunner loadData(MovieRepository repository) {
         return (args) -> {
@@ -31,5 +30,4 @@ public class ApiMovieApplication {
             repository.save(new Movie(null, "Pelicula 4", "Ficcion", "www.netflix.com"));
         };
     }
-
 }

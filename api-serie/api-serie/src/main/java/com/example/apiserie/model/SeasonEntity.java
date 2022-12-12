@@ -24,7 +24,6 @@ public class SeasonEntity implements Serializable {
 
     @Id
     private Long seasonID;
-    private String name;
     private Integer seasonNumber;
-    private List<ChapterEntity> chapters = new ArrayList<>();
+    private List<ChapterEntity> chapters;
 }

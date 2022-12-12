@@ -1,6 +1,5 @@
 package com.example.apiserie.model;
 
-import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +12,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 @Getter
 @Setter
 @NoArgsConstructor
@@ -26,5 +24,5 @@ public class SerieEntity implements Serializable {
     private Long serieID;
     private String name;
     private String genre;
-    private List<SeasonEntity> seasons = new ArrayList<>();
+    private List<SeasonEntity> seasons;
 }
