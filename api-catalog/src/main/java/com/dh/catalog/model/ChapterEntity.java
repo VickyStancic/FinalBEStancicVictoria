@@ -13,7 +13,6 @@ import java.io.Serial;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection= "Chapter")
 public class ChapterEntity {
     @Serial
     private static final long serialVersionUID = 1L;

@@ -14,7 +14,6 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "Movie")
 public class MovieEntity implements Serializable {
 
     @Serial
