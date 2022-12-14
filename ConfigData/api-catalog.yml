@@ -54,7 +54,7 @@ resilience4j.circuitbreaker:
     clientSerie:
       allowHealthIndicatorToFail: false
       registerHealthIndicator: true
-      slidingWindowSize: 5
+      slidingWindowSize: 10
       permittedNumberOfCallsInHalfOpenState: 3
       slidingWindowType: TIME_BASED
       minimumNumberOfCalls: 20

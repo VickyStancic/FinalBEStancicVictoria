@@ -16,7 +16,6 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "Season")
 public class SeasonEntity implements Serializable {
 
     @Serial

@@ -21,7 +21,6 @@ public class NewSerieEventConsumer {
 
     private SerieMongoRepository serieMongoRepository;
 
-
     public NewSerieEventConsumer(SerieMongoRepository serieMongoRepository) {
         this.serieMongoRepository = serieMongoRepository;
     }
@@ -32,9 +31,7 @@ public class NewSerieEventConsumer {
         BeanUtils.copyProperties(data.getSerie(), serieNew);
         serieMongoRepository.save(serieNew);
 
-
     }
-
 
     @Getter
     @Setter
@@ -58,7 +55,6 @@ public class NewSerieEventConsumer {
             private String genre;
             private List<Data.SerieDTO.SeasonDTO> seasons;
 
-
             @Getter
             @Setter
             @NoArgsConstructor
@@ -69,7 +65,6 @@ public class NewSerieEventConsumer {
                 private String seasonId;
                 private Integer seasonNumber;
                 private List<Data.SerieDTO.SeasonDTO.ChapterDTO> chapters;
-
 
                 @Getter
                 @Setter

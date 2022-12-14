@@ -22,29 +22,29 @@ public class MovieService {
         this.newMovieEventProducer = newMovieEventProducer;
     }
     public List<Movie> getAllMovies(){
-        log.info("Listando todas las peliculas");
+        log.info("Listando películas");
         return movieRepository.findAll();
     }
     public Movie getMovieById(Long id) {
-        log.info("Buscando la pelicula número " + id);
+        log.info("Buscando película número " + id);
         return movieRepository.findById(id).orElse(null);
     }
     public List<Movie> findByGenre(String genre) {
-        log.info("Listando las peliculas del género "+ genre);
+        log.info("Listando películas del género "+ genre);
         return movieRepository.findByGenre(genre);
     }
     public Movie save(Movie movie) {
-        log.info("Guardando la película " + movie.getName());
+        log.info("Guardando película " + movie.getName());
         movieRepository.save(movie);
         newMovieEventProducer.execute(movie);
         return movie;
     }
     public void deleteMovie(Long id){
-        log.info("Eiminando la película con el id " + id);
+        log.info("Eliminando película " + id);
         movieRepository.deleteById(id);
     }
     public void updateMovie(Movie movie){
-        log.info("Actualizando la película número " + movie.getId());
+        log.info("Actualizando película número " + movie.getId());
         if(movieRepository.existsById(movie.getId())){
             movieRepository.save(movie);
         }

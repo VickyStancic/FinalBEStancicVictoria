@@ -30,7 +30,7 @@ public class CatalogOfflineService {
                 genreMovies.add(movie);
             }
         }
-        log.info("Consultando la peliculas del género " + genre + "en la base de datos catálogo");
+        log.info("Consultando la película del género " + genre + "en la base de datos catálogo");
         return genreMovies;
     }
     public List<SerieEntity> findSerieByGenre(String genre) {
@@ -41,7 +41,7 @@ public class CatalogOfflineService {
                 genreSeries.add(serie);
             }
         }
-        log.info("Consultando las series del géero " + genre + "en la base de datos de catálogo");
+        log.info("Consultando las series del género " + genre + "en la base de datos de catálogo");
         return genreSeries;
     }
 }

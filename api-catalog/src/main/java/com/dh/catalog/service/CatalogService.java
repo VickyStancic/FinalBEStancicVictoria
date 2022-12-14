@@ -17,7 +17,6 @@ public class CatalogService {
 
     final static Logger log = Logger.getLogger(CatalogService.class);
     private final MovieServiceClient movieServiceClient;
-
     private final SerieServiceClient serieServiceClient;
 
     public CatalogService(MovieServiceClient movieServiceClient, SerieServiceClient serieServiceClient) {
@@ -30,27 +29,22 @@ public class CatalogService {
         ApiException error;
         List response =  movieServiceClient.getMovieByGenre(genre);
         if (response.isEmpty()) {
-            error = new ApiException("No hay peliculas para el género seleccionado", HttpStatus.NOT_FOUND, ZonedDateTime.now());
+            error = new ApiException("No se encuentra películas del género elegido", HttpStatus.NOT_FOUND, ZonedDateTime.now());
             response.add(error);
         }
-        else log.info("Consultando las peliculas del género " + genre);
+        else log.info("Buscando las peliculas del género " + genre);
         return response;
     }
     public List<?> callMovieFallBack(String genre, Throwable t) {
         ApiException error;
         List response =  movieServiceClient.getMovieByGenre(genre);
         if (response.isEmpty()) {
-            error = new ApiException("No hay peliculas para el género seleccionado", HttpStatus.NOT_FOUND, ZonedDateTime.now());
+            error = new ApiException("No se encuentra películas del género elegido", HttpStatus.NOT_FOUND, ZonedDateTime.now());
             response.add(error);
         }
-
         else log.info("Retry de Movies");
         return response;
     }
-
-
-
-
     @CircuitBreaker(name= "clientSerie", fallbackMethod = "callSerieFallBack")
     @Retry(name = "clientSerie")
     public List<?> getSerieByGenre(String genre) {
@@ -67,10 +61,12 @@ public class CatalogService {
         ApiException error;
         List response = serieServiceClient.getSerieByGenre(genre);
         if (response.isEmpty()) {
-            error = new ApiException("No hay series para el genero seleccionado", HttpStatus.NOT_FOUND, ZonedDateTime.now());
+            error = new ApiException("No se encuentra series del género elegido", HttpStatus.NOT_FOUND, ZonedDateTime.now());
             response.add(error);
         }
         log.info("Retry de Series");
         return response;
     }
+    //Para la tolerancia a fallos implemente un retry adaptándolo para que el mismo sea tolerante
+    //cada vez que la conexión procure ser reestablecida con el microservicio que es consumido.
 }
