@@ -21,7 +21,7 @@ public class SerieEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
-    private String serieID;
+    private Long serieID;
     private String name;
     private String genre;
     private List<SeasonEntity> seasons;
