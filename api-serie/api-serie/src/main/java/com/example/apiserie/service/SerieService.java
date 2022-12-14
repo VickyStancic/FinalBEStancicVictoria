@@ -20,7 +20,7 @@ public class SerieService {
         return serieRepository.findByGenre(genre);
     }
     public void save(SerieEntity serie) {
-        //newSerieEventProducer.execute(serie);
+        newSerieEventProducer.execute(serie);
          serieRepository.save(serie);
     }
 }
