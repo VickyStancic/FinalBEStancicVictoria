@@ -19,8 +19,8 @@ public class SerieService {
     public List<SerieEntity> findByGenre(String genre) {
         return serieRepository.findByGenre(genre);
     }
-    public SerieEntity save(SerieEntity serie) {
+    public void save(SerieEntity serie) {
         newSerieEventProducer.execute(serie);
-        return serieRepository.save(serie);
+         serieRepository.save(serie);
     }
 }
